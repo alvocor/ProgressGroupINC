@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract advisory path</title>
+  <desc id="desc">Four coordinated stages follow an open path from understanding to forward movement.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0B1F33"/>
+      <stop offset="1" stop-color="#173E5C"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#1B7F7A"/>
+      <stop offset="0.7" stop-color="#77D2C7"/>
+      <stop offset="1" stop-color="#D8A541"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" rx="48" fill="url(#bg)"/>
+  <circle cx="967" cy="169" r="170" fill="#1B7F7A" opacity="0.13" filter="url(#glow)"/>
+  <circle cx="237" cy="727" r="190" fill="#1E4E79" opacity="0.2" filter="url(#glow)"/>
+  <path d="M131 696C249 586 282 434 439 451c153 17 178 162 335 117 134-39 146-215 292-343" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="96" stroke-linecap="round"/>
+  <path d="M131 696C249 586 282 434 439 451c153 17 178 162 335 117 134-39 146-215 292-343" fill="none" stroke="url(#line)" stroke-width="14" stroke-linecap="round"/>
+  <g font-family="Manrope, Inter, Segoe UI, Arial, sans-serif" font-weight="760" text-anchor="middle">
+    <g transform="translate(176 641)">
+      <circle r="72" fill="#102B43" stroke="#2A948E" stroke-width="4"/>
+      <circle r="48" fill="#1B7F7A" opacity="0.18"/>
+      <text y="11" fill="#FFFFFF" font-size="36">01</text>
+    </g>
+    <g transform="translate(439 451)">
+      <circle r="72" fill="#102B43" stroke="#55BDB5" stroke-width="4"/>
+      <circle r="48" fill="#1B7F7A" opacity="0.18"/>
+      <text y="11" fill="#FFFFFF" font-size="36">02</text>
+    </g>
+    <g transform="translate(774 568)">
+      <circle r="72" fill="#102B43" stroke="#77D2C7" stroke-width="4"/>
+      <circle r="48" fill="#77D2C7" opacity="0.12"/>
+      <text y="11" fill="#FFFFFF" font-size="36">03</text>
+    </g>
+    <g transform="translate(1066 225)">
+      <circle r="78" fill="#102B43" stroke="#D8A541" stroke-width="5"/>
+      <circle r="52" fill="#D8A541" opacity="0.14"/>
+      <text y="11" fill="#FFFFFF" font-size="36">04</text>
+    </g>
+  </g>
+  <g fill="none" stroke="#FFFFFF" stroke-opacity="0.13" stroke-width="2">
+    <path d="M90 165h362"/>
+    <path d="M90 194h250"/>
+    <path d="M836 760h274"/>
+    <path d="M919 789h191"/>
+  </g>
+  <g fill="#D8A541">
+    <circle cx="90" cy="165" r="5"/>
+    <circle cx="1110" cy="789" r="5"/>
+  </g>
+</svg>

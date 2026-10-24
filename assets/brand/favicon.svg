@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Progress Group Inc.">
+  <rect width="64" height="64" rx="15" fill="#0B1F33"/>
+  <path d="M16 47V27c0-7 5-12 12-12h6c7 0 12 5 12 12s-5 12-12 12H24" fill="none" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="m24 47 10-10 7 5 9-12" fill="none" stroke="#1B7F7A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="24" cy="47" r="3.5" fill="#D8A541"/>
+  <circle cx="50" cy="30" r="3.5" fill="#D8A541"/>
+</svg>

@@ -1,0 +1,19 @@
+---
+import markUrl from "../../assets/brand/logo-mark.svg?url";
+import { site } from "../data/site";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <img src={markUrl} width="160" height="160" alt="" />
+      <div>
+        <p class="footer-name">{site.name}</p>
+        <p>Business process · Management · Projects · Operations · Advisory</p>
+      </div>
+    </div>
+    <p class="footer-meta">© {year} {site.name}<br />Website foundation preview</p>
+  </div>
+</footer>

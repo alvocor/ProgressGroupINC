@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 180" role="img" aria-labelledby="title desc">
+  <title id="title">Progress Group Inc.</title>
+  <desc id="desc">Progress Group Inc. wordmark with a connected upward pathway symbol.</desc>
+  <g transform="translate(10 10)">
+    <rect width="160" height="160" rx="36" fill="#0B1F33"/>
+    <path d="M39 116V68c0-13.3 10.7-24 24-24h18c13.3 0 24 10.7 24 24v1c0 13.3-10.7 24-24 24H59" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M58 116 82 92l18 14 25-34" fill="none" stroke="#1B7F7A" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="58" cy="116" r="7" fill="#D8A541"/>
+    <circle cx="82" cy="92" r="6" fill="#D8A541"/>
+    <circle cx="125" cy="72" r="7" fill="#D8A541"/>
+  </g>
+  <g fill="#0B1F33" font-family="Manrope, Inter, Segoe UI, Arial, sans-serif">
+    <text x="205" y="92" font-size="61" font-weight="720" letter-spacing="-1.5">Progress Group</text>
+    <text x="209" y="131" font-size="24" font-weight="700" letter-spacing="8" fill="#1B7F7A">INC.</text>
+  </g>
+</svg>

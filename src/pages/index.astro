@@ -1,0 +1,152 @@
+---
+import advisoryPathUrl from "../../assets/images/advisory-path.svg?url";
+import heroVisualUrl from "../../assets/images/hero-advisory.svg?url";
+import operationsVisualUrl from "../../assets/images/operations-flow.svg?url";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { site } from "../data/site";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <div id="top" class="page">
+    <SiteHeader />
+
+    <main id="main-content">
+      <section class="hero section-dark" aria-labelledby="hero-title">
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow eyebrow-light">{site.hero.eyebrow}</p>
+            <h1 id="hero-title">{site.hero.title}</h1>
+            <p class="hero-lede">{site.hero.body}</p>
+            <div class="button-row">
+              <a class="button button-gold" href="#contact">Discuss a business challenge</a>
+              <a class="text-link text-link-light" href="#services">
+                Explore our services <span aria-hidden="true">↘</span>
+              </a>
+            </div>
+            <p class="hero-note">
+              Focused support for business processes, management decisions, projects,
+              and operational questions.
+            </p>
+          </div>
+
+          <div class="hero-visual" aria-hidden="true">
+            <div class="visual-frame">
+              <img src={heroVisualUrl} width="1600" height="1000" alt="" />
+            </div>
+            <div class="visual-caption">
+              <span>Clear view</span>
+              <span>Workable path</span>
+              <span>Forward motion</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section section-intro" aria-labelledby="about-title">
+        <div class="shell split-heading">
+          <div>
+            <p class="eyebrow">A focused consulting partner</p>
+            <h2 id="about-title">Start by seeing the work clearly.</h2>
+          </div>
+          <div class="section-prose">
+            <p class="lead">
+              Progress Group Inc. brings a practical lens to operating questions,
+              important initiatives, and work that needs clearer direction.
+            </p>
+            <p>
+              The first step is not a prepackaged answer. It is a useful view of the
+              current situation, the priorities that matter, and an approach people can
+              carry forward.
+            </p>
+          </div>
+        </div>
+
+        <div class="shell question-grid" aria-label="Questions the work can help address">
+          {site.questions.map((question, index) => (
+            <article class="question-card">
+              <span aria-hidden="true">0{index + 1}</span>
+              <h3>{question}</h3>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="services" class="section services-section" aria-labelledby="services-title">
+        <div class="shell section-heading-row">
+          <div>
+            <p class="eyebrow">Services</p>
+            <h2 id="services-title">Practical support, shaped around the situation.</h2>
+          </div>
+          <p>
+            Each service starts with context and a defined objective—not an unsupported
+            promise about a predetermined result.
+          </p>
+        </div>
+
+        <div class="shell service-layout">
+          <div class="service-visual" aria-hidden="true">
+            <img src={operationsVisualUrl} width="1200" height="900" alt="" />
+          </div>
+          <div class="service-list">
+            {site.services.map((service) => (
+              <article class="service-item">
+                <span>{service.number}</span>
+                <div>
+                  <h3>{service.title}</h3>
+                  <p>{service.summary}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="approach" class="section section-dark approach-section" aria-labelledby="approach-title">
+        <div class="shell approach-grid">
+          <div class="approach-copy">
+            <p class="eyebrow eyebrow-light">A flexible engagement framework</p>
+            <h2 id="approach-title">Create clarity. Build alignment. Keep moving.</h2>
+            <p class="lead">
+              A simple four-stage structure keeps the conversation grounded while
+              allowing the work to respond to what the situation reveals.
+            </p>
+            <img class="approach-visual" src={advisoryPathUrl} width="1200" height="900" alt="" />
+          </div>
+
+          <ol class="approach-list">
+            {site.approach.map((step, index) => (
+              <li>
+                <span>0{index + 1}</span>
+                <div>
+                  <h3>{step.title}</h3>
+                  <p>{step.summary}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+        <div class="shell contact-card">
+          <div>
+            <p class="eyebrow">Start with the challenge in front of you</p>
+            <h2 id="contact-title">A useful conversation begins with the situation.</h2>
+          </div>
+          <div class="contact-copy">
+            <p>
+              Contact details will be activated after the owner confirms the public
+              business information. No form, tracking, or visitor-data collection is
+              part of this foundation.
+            </p>
+            <a class="text-link" href="#top">Return to the introduction <span aria-hidden="true">↑</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</BaseLayout>

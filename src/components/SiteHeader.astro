@@ -1,0 +1,22 @@
+---
+import logoUrl from "../../assets/brand/logo-horizontal.svg?url";
+import { site } from "../data/site";
+---
+
+<header class="site-header" aria-label="Site header">
+  <div class="shell header-inner">
+    <a class="brand-link" href="#top" aria-label={`${site.name} home`}>
+      <img src={logoUrl} width="820" height="180" alt={site.name} />
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <ul>
+        {site.navigation.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
+    <a class="button button-compact button-dark" href="#contact">Start a conversation</a>
+  </div>
+</header>
