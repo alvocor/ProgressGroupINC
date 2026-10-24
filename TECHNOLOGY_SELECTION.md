@@ -47,7 +47,7 @@ The Windows environment initially had no `node` or `npm` executable. `OpenJS.Nod
 
 ## Decisions Preserved for Later
 
-- Cloudflare selected by the owner on 2026-10-23 for deployment readiness; Workers static-assets configuration and Pages instructions are provided. Production domain and hosted deployment remain pending.
+- Cloudflare selected by the owner on 2026-10-23. The owner reports GitHub is connected to Pages. `wrangler.jsonc` configures Pages; optional Workers static assets use `wrangler.workers.jsonc` explicitly. The strict npm policy denies optional macOS-only `fsevents@2.3.3` scripts while retaining pinned esbuild approval. Production domain and successful hosted deployment remain pending.
 - Whether a contact form is added after its data/privacy and abuse-protection decision.
 - Whether content is file-based, MDX, or connected to a CMS after the initial site proves a CMS is necessary.
 - Whether analytics is useful enough to justify its privacy and operational cost.

@@ -33,13 +33,27 @@ This workspace has an ignored portable Node.js runtime under `.tools/` because n
 
 The repository root is this application directory. If uploading its parent folder instead, set Cloudflare's root directory to `Progress-Group-Inc-app`.
 
-### Workers static assets
+### Cloudflare Pages (current Git integration)
 
-`wrangler.jsonc` serves the generated `dist/` directory without a server or Astro adapter. In Cloudflare Workers & Pages, import the GitHub repository as a Worker and use:
+The supplied build log is from Pages. Use these settings:
 
-- Production branch: `main`
+- Production branch: `master`
 - Build command: `npm run build`
-- Deploy command: `npx wrangler deploy`
+- Output directory: `dist`
+- Build environment: `NODE_VERSION=24.18.0`, `NPM_VERSION=11.16.0`
+- Root directory: blank if GitHub contains the application at its root; `Progress-Group-Inc-app` only if that subdirectory exists in GitHub.
+
+`wrangler.jsonc` configures Pages with `pages_build_output_dir`. The strict npm script policy allows pinned esbuild and explicitly denies `fsevents@2.3.3`, an optional macOS-only dependency whose script is unnecessary for the static build. Keep `strict-allow-scripts=true` and review future install scripts individually.
+
+Commit and push the fixes, then deploy the updated branch. Retrying the original commit uses its old policy.
+
+### Workers static assets (optional alternative)
+
+`wrangler.workers.jsonc` serves the generated `dist/` directory without a server or Astro adapter. In Cloudflare Workers & Pages, import the GitHub repository as a Worker and use:
+
+- Production branch: `master`
+- Build command: `npm run build`
+- Deploy command: `npx wrangler deploy --config wrangler.workers.jsonc`
 - Build environment: `NODE_VERSION=24.18.0`, `NPM_VERSION=11.16.0`
 
 For a manual deployment from an authenticated terminal:
@@ -47,16 +61,16 @@ For a manual deployment from an authenticated terminal:
 ```powershell
 npm ci
 npm run build
-npx wrangler deploy
+npx wrangler deploy --config wrangler.workers.jsonc
 ```
 
-The Worker name defaults to `progress-group-inc`; change it in `wrangler.jsonc` if needed. No application secrets, database, or runtime bindings are required. Unknown paths return 404 rather than the home page.
+The Worker name defaults to `progress-group-inc`; change it in `wrangler.workers.jsonc` if needed. No application secrets, database, or runtime bindings are required. Unknown paths return 404 rather than the home page.
 
-### Cloudflare Pages alternative
+### Pages configuration reference
 
-Import the GitHub repository into Pages. Select the Astro preset, production branch `main`, build command `npm run build`, and output directory `dist`. Set `NODE_VERSION=24.18.0` and `NPM_VERSION=11.16.0` in the build environment. The existing `.nvmrc` also records the Node version. The Workers configuration is not used by Pages.
+Select the Astro preset, production branch `master`, build command `npm run build`, and output directory `dist`. Set `NODE_VERSION=24.18.0` and `NPM_VERSION=11.16.0` in the build environment. The existing `.nvmrc` also records the Node version. Pages uses `wrangler.jsonc`; Workers uses the separate configuration selected by the explicit `--config` argument.
 
-Cloudflare Git integration can rebuild after subsequent pushes. Account connection and the first hosted deployment still need to be completed. Public content approval and the production domain remain separate release tasks.
+The owner reports GitHub is connected to Cloudflare Pages; its first build failed during dependency installation. A successful hosted deployment still needs verification. Public content approval and the production domain remain separate release tasks.
 
 Official references: [Workers static assets](https://developers.cloudflare.com/workers/static-assets/get-started/) and [Astro on Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-an-astro-site/).
 

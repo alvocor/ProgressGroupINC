@@ -37,7 +37,7 @@ See `BRAND_GUIDE.md` and `assets/ASSET_MANIFEST.md` for the complete usage bound
 - The requirements baseline is approved for planning and implementation, with public-fact controls that must close before release.
 - The owner selected Profile A: static Astro with TypeScript on a current Node.js LTS runtime.
 - The first implementation uses project-local styles and focused browser behavior; React, Tailwind, a broad UI kit, server rendering, and a CMS are not default dependencies.
-- Cloudflare deployment configuration and setup instructions are available. The hosted deployment, production domain, analytics, CMS, and a contact form remain pending.
+- GitHub is connected to Cloudflare Pages according to the owner; the initial dependency install failed. Pages configuration and an explicit npm script-policy fix are now present, with a separate optional Workers configuration. A successful hosted deployment, production domain, analytics, CMS, and a contact form remain pending.
 - Protocol feedback participation is Enabled. Bundle `PFB-PGI-20260720-001` is Ready locally under ignored `feedback-export/`; delivery is not authorized, and routine offer cadence or triggers still require an owner choice.
 
 ## Next Step
